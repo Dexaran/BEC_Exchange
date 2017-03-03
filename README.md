@@ -1,4 +1,4 @@
-# Experemental BEC exchange by dexaran820@gmail.com
+# Experimental BEC exchange by dexaran820@gmail.com
 
 
 
