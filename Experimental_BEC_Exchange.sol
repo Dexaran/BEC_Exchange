@@ -1,4 +1,4 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.9;
 
 
 contract bec {
@@ -158,23 +158,29 @@ contract bec {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
 /*                     CONTRACT I WISH TO CREATE              */
-
-
-
-
 
 contract ExperimentalExchange {
     
     address owner;
     address public contract_addr='0x0F8eCa799fDbE0906Ed98c00F84B7B9324b7b3b8';
-    uint public price_per_BEC=500000000000000000;   //0.5 ETC per each BEC
+    uint public price_per_BEC=50000000000000000;   //0.5 ETC per each BEC
     uint this_ETC_balance=0;
     uint this_BEC_balance=0;
     
     
-    uint bec_WEI=100000000;
-    uint etc_WEI=100000000000000000;
+    uint bec_WEI=10000000;
+    uint etc_WEI=1000000000000000000;
     
     
     bool public debugging;
@@ -200,6 +206,14 @@ contract ExperimentalExchange {
             {
                 this_BEC_balance-=amount;
             }
+            else
+            {
+                throw;
+            }
+        }
+        else
+        {
+            throw;
         }
     }
     
@@ -257,6 +271,11 @@ contract ExperimentalExchange {
     }
     
     function kill_contract() onlyowner {
+                
+        bec tmp = bec(contract_addr);
+        if(tmp.transfer(owner, this_BEC_balance))
+        {
+        }
         suicide(owner);
     }
     
@@ -272,6 +291,10 @@ contract ExperimentalExchange {
         {
             this_ETC_balance=0;
         }
+        else
+        {
+            throw;
+        }
     }
     
     function debug_withdraw_BEC() onlyowner onlydebug {
@@ -280,6 +303,10 @@ contract ExperimentalExchange {
         if(tmp.transfer(owner, this_BEC_balance))
         {
             this_BEC_balance=0;
+        }
+        else
+        {
+            throw;
         }
     }
     
@@ -300,14 +327,3 @@ contract ExperimentalExchange {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
