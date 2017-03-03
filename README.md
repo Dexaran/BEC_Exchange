@@ -20,3 +20,10 @@ You need to call approve(exchange_addr, amount_BEC) function first on BEC contra
 
 
 
+!ATTENTION!
+price is set for 1 BEC in WEI.
+it means if you want to sell/buy 1 BEC per 0.5 ETC you need to set price=50000000000000000
+price=100000000000000000   (1 BEC = 1 ETC)
+price=10000000000000000    (1 BEC = 0.1 ETC)
+price=2000000000000000     (1 BEC = 0.02 ETC)
+etc. 
