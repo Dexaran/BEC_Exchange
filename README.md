@@ -1,1 +1,22 @@
 # Experemental BEC exchange by dexaran820@gmail.com
+
+
+
+Everyone can set up own contract using this code than change the price as needed by calling change_price(PRICE) and donate_BEC(BEC) or donate_ETC() inside the contract then share its address to allow everyone buy/sell BEC from this contract at the given price.
+
+
+The base version of contract includes self-made debug mode enabled by default. 
+During the debug mode contract owner can withdraw ETC/BEC at any time it needs to be done. Turned off once debug couldnt be turned on again.
+
+
+Every time someone sends ETC to the contract it will automatically trigger a trade at the given price. If you send more ETC than (price*BEC) is inside the contract your transaction will fail.
+
+
+Accidental send of BEC will trigger nothing and BEC will stay at the contract untill its owner will take them.
+
+To trigger a trade by sending BEC you need to choose the sell_my_BEC(BEC) function.
+The person who wants to sell BEC intor ETC by using this contract MUST first allow the contract to take his BEC because exchange contract CAN'T do it by default. 
+You need to call approve(exchange_addr, amount_BEC) function first on BEC contract itself (here on ETC mainnet: 0x085fb4f24031eaedbc2b611aa528f22343eb52db)
+
+
+
